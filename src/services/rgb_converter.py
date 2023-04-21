@@ -59,3 +59,11 @@ def convert_rgb_to_int(color_rgb):
     red, green, blue = color_rgb
     color_int = (red * 65536) + (green * 256) + blue  # , (when R is RED, G is GREEN and B is BLUE)
     return color_int
+
+
+print(convert_int_to_rgb(3366827))
+print(convert_int_to_rgb(7565239))
+print(convert_int_to_rgb(8849367))
+print(convert_int_to_rgb(8869755))
+print(convert_int_to_rgb(10745671))
+print(convert_int_to_rgb(11004803))
