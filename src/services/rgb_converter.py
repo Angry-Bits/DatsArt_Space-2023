@@ -21,11 +21,11 @@ def mix_rgb_colors(list_rgb_colors):
     red, green, blue = 0,0,0
     for r,g,b in list_rgb_colors:
         red += r
-        green += r
-        blue += r
-    red = red // len(list_rgb_colors)
-    green = green // len(list_rgb_colors)
-    blue = blue // len(list_rgb_colors)
+        green += g
+        blue += b
+    red = round(red / len(list_rgb_colors))
+    green = round(green / len(list_rgb_colors))
+    blue = round(blue / len(list_rgb_colors))
     return (red, green, blue)
 
 def convert_rgb_to_int(color_rgb):
