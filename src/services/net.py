@@ -119,7 +119,8 @@ def change_paint(selected_paint_id: int, url: str = URL_CHANGE_PAINT) -> Any:
 # Склад краски
 
 def colors_info(url: str = URL_COLORS_INFO) -> Any:
-    '''Общая информация.'''
+    '''Общая информация об имеющемся количестве уникальных цветов
+    и общем количестве краски.'''
     headers = {
         "Authorization": f"Bearer {TEAM_TOKEN}",
         "Content-Type": "multipart/form-data",
@@ -130,13 +131,14 @@ def colors_info(url: str = URL_COLORS_INFO) -> Any:
 
 
 def colors_amount(selected_color: int, url: str = URL_COLORS_AMOUNT) -> Any:
+    '''Запрос остатков краски.'''
     headers = {
         "Authorization": f"Bearer {TEAM_TOKEN}",
         "Content-Type": "multipart/form-data",
     }
     multipart_data = MultipartEncoder(
         fields={
-            "num": str(selected_color)
+            "color": str(selected_color)
         }
     )
     headers["Content-Type"] = multipart_data.content_type
@@ -200,6 +202,7 @@ def generate_tick(url: str = URL_TICK_GENERATION) -> Any:
 # Очередь
 
 def check_queue_status(name: str, url: str = URL_STATE_QUEUE) -> Any:
+    '''Узнать состояние очереди.'''
     headers = {
         "Authorization": f"Bearer {TEAM_TOKEN}",
         "Content-Type": "multipart/form-data",
